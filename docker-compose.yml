@@ -1,0 +1,20 @@
+name: quest-compose
+
+services:
+
+  angular:
+    image: ajc/quest:angular
+    container_name: quest-angular
+
+    ports:
+      - 80:80
+
+    depends_on:
+      - boot
+
+    networks:
+      - quest
+
+networks:
+  quest:
+    name: quest
